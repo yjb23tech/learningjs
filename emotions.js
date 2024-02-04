@@ -169,18 +169,35 @@ const catsData = [
     },
 ]
 
-const blankArray = []
+// const blankArray = []
 
-function getEmotionsArray(cats) {
-    for (let cat of cats) {
-        for (let emotion of cat.emotionTags) {
-            blankArray.push(emotion)
+// function getEmotionsArray(cats) {
+//     for (let cat of cats) {
+//         for (let emotion of cat.emotionTags) {
+//             blankArray.push(emotion)
+//         }
+//     }
+
+//     for (let i = 0; i < blankArray.length; i++){
+//         console.log(`I am feeling: ${blankArray[i]}`)
+//     }
+// }
+
+// getEmotionsArray(catsData)
+
+function getEmotionsArray(cats){
+    const emotionsArray = []
+    for (let cat of cats){
+        for (let emotion of cat.emotionTags){
+            emotionsArray.push(emotion)
         }
     }
-
-    for (let i = 0; i < blankArray.length; i++){
-        console.log(`I am feeling: ${blankArray[i]}`)
-    }
+    return emotionsArray
 }
 
-getEmotionsArray(catsData)
+function renderEmotionsRadios(cats) {
+    const emotions = getEmotionsArray(cats)
+    console.log(emotions)
+}
+
+console.log(renderEmotionsRadios(catsData))
