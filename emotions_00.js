@@ -175,12 +175,23 @@ const catsData = [
 //     }
 // }
 
-function getEmotions(cats) {
+// function getEmotions(cats) {
+//     for (let cat of cats) {
+//         for (let emotion of cat.emotionTags) {
+//             console.log(emotion)
+//         }
+//     }
+// }
+
+// getEmotions(catsData)
+
+function getEvenMoreEmotions(cats) {
     for (let cat of cats) {
         for (let emotion of cat.emotionTags) {
             console.log(emotion)
         }
+
     }
 }
 
-getEmotions(catsData)
+getEvenMoreEmotions(catsData)
