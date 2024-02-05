@@ -169,8 +169,18 @@ const catsData = [
     },
 ]
 
-for (let x = 0; x < catsData.length; x++) {
-    for (let y = 0; y < catsData[x].emotionTags.length; y++) {
-        console.log(catsData[x].emotionTags[y])
+// for (let x = 0; x < catsData.length; x++) {
+//     for (let y = 0; y < catsData[x].emotionTags.length; y++) {
+//         console.log(catsData[x].emotionTags[y])
+//     }
+// }
+
+function getEmotions(cats) {
+    for (let cat of cats) {
+        for (let emotion of cat.emotionTags) {
+            console.log(emotion)
+        }
     }
 }
+
+getEmotions(catsData)
