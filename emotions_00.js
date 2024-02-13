@@ -186,12 +186,25 @@ const catsData = [
 // getEmotions(catsData)
 
 function getEvenMoreEmotions(cats) {
+
+    const tempEmotionsArray = []
+
     for (let cat of cats) {
         for (let emotion of cat.emotionTags) {
-            console.log(emotion)
+            tempEmotionsArray.push(emotion)
         }
 
     }
+
+    return (tempEmotionsArray)
 }
 
-getEvenMoreEmotions(catsData)
+function renderEmotionsArray(cats) {
+    const emotions = getEvenMoreEmotions(cats)
+    console.log(emotions)
+}
+
+renderEmotionsArray(catsData)
+
+
+// console.log(getEvenMoreEmotions(catsData))
