@@ -1,14 +1,17 @@
 
-console.log(__filename)
-console.log(__dirname)
+const EventEmitter = require('events')
 
-var url = "http://mylogger.io/log"
+class Loggger extends EventEmitter {
 
-function log(message) {
+ log(message) {
     //send a HTTP request 
     console.log(message)
+
+    // raise an event
+    this.emit('messageLogged', {id: 1, data: "FUCK THAT SHIT YOUNG NIGGA GET PAID"})
 }
 
-module.exports.log = log
-module.exports.url = url
+}
+
+module.exports = Loggger
 

@@ -1,11 +1,14 @@
-const logger = require('./logger')
+const EventEmitter = require('events')
 
-// function sayHello(name) {
-//     console.log('Hello ' + name)
-// }
+// emitter.on('messageLogged', (arg) => {
+//     console.log('Listener called', arg); 
+// })
 
-// sayHello("Joshua")
+const Logger = require('./logger')
+const logger = new Logger()
 
-// console.log(logger)
+logger.on('messageLogged', (arg) => {
+    console.log(`Listener called ${arg.data}`)
+})
 
-logger.log("Jeezy")
+logger.log('message')
